@@ -636,13 +636,13 @@ void replica_stub::initialize_start()
     if (!_options.mem_release_disabled) {
         _mem_release_timer_task =
                 tasking::enqueue_timer(LPC_MEM_RELEASE,
-                                       &_tracker,
-                                       []() {
-                                           ::MallocExtension::instance()->ReleaseFreeMemory();
-                                       },
-                                       std::chrono::milliseconds(_options.mem_release_interval_ms),
-                                       0,
-                                       std::chrono::milliseconds(_options.mem_release_interval_ms));
+                                   &_tracker,
+                                   []() {
+                                       ::MallocExtension::instance()->ReleaseFreeMemory();
+                                   },
+                                   std::chrono::milliseconds(_options.mem_release_interval_ms),
+                                   0,
+                                   std::chrono::milliseconds(_options.mem_release_interval_ms));
     }
 
     // init liveness monitor
