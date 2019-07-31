@@ -27,7 +27,6 @@
 #pragma once
 
 #include <dsn/dist/replication.h>
-#include <dsn/tool-api/group_address.h>
 #include <string>
 
 namespace dsn {
@@ -104,7 +103,7 @@ public:
     bool config_sync_disabled;
     int32_t config_sync_interval_ms;
 
-    bool mem_release_disabled;
+    bool mem_release_enabled;
     int32_t mem_release_interval_ms;
 
     int32_t lb_interval_ms;
